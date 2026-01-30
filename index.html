@@ -193,7 +193,7 @@
         /* Hero Section - Style Mon Chasseur Immo avec animation */
         .hero {
             margin-top: 85px;
-            background: #0a1628;
+            background: transparent;
             padding: 120px 3rem 100px;
             position: relative;
             overflow: hidden;
@@ -208,6 +208,7 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
+            background: linear-gradient(135deg, #0f2446 0%, #1a4d8f 100%);
         }
         
         .hero-video-bg::before {
@@ -217,7 +218,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15, 36, 70, 0.92) 0%, rgba(0, 82, 204, 0.85) 100%);
+            background: linear-gradient(135deg, rgba(15, 36, 70, 0.5) 0%, rgba(26, 77, 143, 0.4) 100%);
             z-index: 2;
         }
         
@@ -233,11 +234,11 @@
         
         .particle {
             position: absolute;
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.5);
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 50%;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             animation: fade-particle linear infinite;
         }
         
@@ -248,27 +249,27 @@
             }
             /* Fade in */
             5% {
-                opacity: 0.1;
+                opacity: 0.2;
             }
             10% {
-                opacity: 0.3;
+                opacity: 0.5;
             }
             15% {
-                opacity: 0.5;
+                opacity: 0.7;
             }
             /* Visible */
             20%, 80% {
-                opacity: 0.6;
+                opacity: 0.8;
             }
             /* Fade out */
             85% {
-                opacity: 0.5;
+                opacity: 0.7;
             }
             90% {
-                opacity: 0.3;
+                opacity: 0.5;
             }
             95% {
-                opacity: 0.1;
+                opacity: 0.2;
             }
             100% {
                 transform: translateY(-100vh) translateX(60px);
@@ -281,7 +282,7 @@
             position: absolute;
             opacity: 0;
             animation: fade-building linear infinite;
-            filter: blur(0.5px);
+            filter: blur(0.3px);
         }
         
         @keyframes fade-building {
@@ -291,28 +292,28 @@
             }
             /* Fade in progressif */
             10% {
-                opacity: 0.03;
+                opacity: 0.08;
             }
             20% {
-                opacity: 0.06;
+                opacity: 0.15;
             }
             30% {
-                opacity: 0.1;
+                opacity: 0.22;
             }
             /* Pleine visibilité */
             40%, 60% {
-                opacity: 0.12;
+                opacity: 0.25;
                 transform: translateY(40vh) translateX(0) scale(1);
             }
             /* Fade out progressif */
             70% {
-                opacity: 0.1;
+                opacity: 0.22;
             }
             80% {
-                opacity: 0.06;
+                opacity: 0.15;
             }
             90% {
-                opacity: 0.03;
+                opacity: 0.08;
             }
             100% {
                 transform: translateY(0vh) translateX(20px) scale(1.1);
@@ -342,7 +343,7 @@
         /* Small icon decorations with fade effect */
         .floating-icon {
             position: absolute;
-            font-size: 2rem;
+            font-size: 2.5rem;
             opacity: 0;
             animation: fade-icon linear infinite;
         }
@@ -354,27 +355,27 @@
             }
             /* Fade in */
             8% {
-                opacity: 0.03;
-            }
-            15% {
                 opacity: 0.08;
             }
+            15% {
+                opacity: 0.15;
+            }
             20% {
-                opacity: 0.12;
+                opacity: 0.2;
             }
             /* Visible */
             25%, 75% {
-                opacity: 0.15;
+                opacity: 0.25;
             }
             /* Fade out */
             80% {
-                opacity: 0.12;
+                opacity: 0.2;
             }
             85% {
-                opacity: 0.08;
+                opacity: 0.15;
             }
             92% {
-                opacity: 0.03;
+                opacity: 0.08;
             }
             100% {
                 transform: translateY(-10vh) translateX(30px) rotate(10deg);
