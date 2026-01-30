@@ -35,30 +35,32 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Palette de bleus professionnels et élégants */
-            --primary-blue: #1e3a8a;      /* Bleu profond professionnel */
-            --secondary-blue: #3b82f6;    /* Bleu vif pour accents */
-            --light-blue: #dbeafe;        /* Bleu très clair pour fonds */
-            --accent-blue: #60a5fa;       /* Bleu moyen pour hover */
-            --dark-blue: #1e293b;         /* Bleu très foncé pour textes */
+            /* Palette de bleus élégants inspirée de designs modernes */
+            --primary-blue: #0052CC;
+            --secondary-blue: #2E5BFF;
+            --light-blue: #EBF4FF;
+            --accent-blue: #4C9AFF;
+            --dark-blue: #172B4D;
             
             /* Couleurs neutres */
             --white: #ffffff;
-            --off-white: #f8fafc;
-            --gray-light: #e2e8f0;
-            --gray-medium: #64748b;
-            --gray-dark: #334155;
+            --off-white: #F7F9FC;
+            --gray-light: #DFE1E6;
+            --gray-medium: #6B778C;
+            --gray-dark: #253858;
+            --success: #00875A;
+            --error: #DE350B;
             
             /* Typography */
             --font-display: 'Playfair Display', serif;
-            --font-body: 'Work Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
             
             /* Spacing */
-            --section-padding: 80px;
+            --section-padding: 100px;
             --container-width: 1200px;
         }
         
@@ -77,6 +79,7 @@
             color: var(--gray-dark);
             line-height: 1.7;
             overflow-x: hidden;
+            background: var(--white);
         }
         
         /* Navigation */
@@ -86,8 +89,8 @@
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(30, 58, 138, 0.08);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 2px 30px rgba(0, 82, 204, 0.08);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -95,7 +98,7 @@
         .nav-container {
             max-width: var(--container-width);
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1.3rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -103,22 +106,23 @@
         
         .logo {
             font-family: var(--font-display);
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.7rem;
+            font-weight: 800;
             color: var(--primary-blue);
             text-decoration: none;
             letter-spacing: -0.5px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .logo:hover {
             color: var(--secondary-blue);
+            transform: scale(1.02);
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 3rem;
             align-items: center;
         }
         
@@ -127,14 +131,15 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
         
         .nav-menu a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
@@ -151,17 +156,17 @@
         }
         
         .nav-cta {
-            background: var(--secondary-blue);
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
             color: var(--white) !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(46, 91, 255, 0.3);
         }
         
         .nav-cta:hover {
-            background: var(--primary-blue);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 6px 25px rgba(46, 91, 255, 0.4);
         }
         
         .nav-cta::after {
@@ -174,22 +179,22 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding: 5px;
+            padding: 8px;
         }
         
         .menu-toggle span {
-            width: 25px;
+            width: 28px;
             height: 3px;
             background: var(--primary-blue);
             border-radius: 3px;
             transition: all 0.3s ease;
         }
         
-        /* Hero Section */
+        /* Hero Section - Style Mon Chasseur Immo */
         .hero {
-            margin-top: 80px;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            padding: var(--section-padding) 2rem;
+            margin-top: 85px;
+            background: linear-gradient(135deg, #F0F7FF 0%, #E3F2FF 100%);
+            padding: 120px 3rem 100px;
             position: relative;
             overflow: hidden;
         }
@@ -197,26 +202,26 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            top: -30%;
+            right: -15%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(46, 91, 255, 0.08) 0%, transparent 70%);
             border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
+            animation: pulse 15s ease-in-out infinite;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-30px, 30px) rotate(180deg); }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.7; }
         }
         
         .hero-container {
             max-width: var(--container-width);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
             align-items: center;
             position: relative;
             z-index: 1;
@@ -224,15 +229,15 @@
         
         .hero-content h1 {
             font-family: var(--font-display);
-            font-size: 3.2rem;
-            line-height: 1.2;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
+            font-size: 3.8rem;
+            line-height: 1.15;
+            color: var(--dark-blue);
+            margin-bottom: 1.8rem;
             font-weight: 800;
         }
         
         .hero-tagline {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--secondary-blue);
             font-weight: 600;
             margin-bottom: 2rem;
@@ -240,59 +245,86 @@
         }
         
         .hero-description {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--gray-dark);
-            margin-bottom: 2rem;
-            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
         }
         
-        .hero-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem 0;
         }
         
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--gray-medium);
             font-weight: 500;
-            color: var(--gray-dark);
-        }
-        
-        .hero-feature::before {
-            content: '👉';
-            font-size: 1.3rem;
         }
         
         .cta-button {
-            display: inline-block;
-            background: var(--secondary-blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
             color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 10px;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 30px rgba(46, 91, 255, 0.35);
         }
         
         .cta-button:hover {
-            background: var(--primary-blue);
             transform: translateY(-3px);
-            box-shadow: 0 6px 30px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 12px 40px rgba(46, 91, 255, 0.45);
+        }
+        
+        .cta-subtext {
+            font-size: 0.9rem;
+            color: var(--gray-medium);
+            margin-top: 1rem;
         }
         
         .hero-visual {
             background: var(--white);
             padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.1);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 82, 204, 0.15);
             position: relative;
+        }
+        
+        .visual-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: linear-gradient(135deg, var(--success), #36B37E);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 20px rgba(0, 135, 90, 0.3);
         }
         
         .hero-visual-content {
@@ -300,32 +332,34 @@
         }
         
         .hero-icon {
-            font-size: 8rem;
-            margin-bottom: 1rem;
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
             display: block;
-            animation: bounce 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
         
-        @keyframes bounce {
+        @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
         
         .hero-visual h3 {
             font-family: var(--font-display);
             color: var(--primary-blue);
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin-bottom: 1rem;
+            font-weight: 700;
         }
         
         .hero-visual p {
             color: var(--gray-medium);
             font-size: 1.05rem;
+            line-height: 1.8;
         }
         
         /* Section Standard */
         .section {
-            padding: var(--section-padding) 2rem;
+            padding: var(--section-padding) 3rem;
         }
         
         .section-alt {
@@ -339,21 +373,32 @@
         
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
         
         .section-title {
             font-family: var(--font-display);
-            font-size: 2.8rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 3rem;
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
         }
         
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--gray-medium);
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto;
             line-height: 1.8;
         }
@@ -361,54 +406,57 @@
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
         
         .card {
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(30, 58, 138, 0.08);
-            transition: all 0.3s ease;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0, 82, 204, 0.08);
+            transition: all 0.4s ease;
             border: 2px solid transparent;
+            position: relative;
         }
         
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 82, 204, 0.15);
             border-color: var(--light-blue);
         }
         
         .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.8rem;
             display: block;
         }
         
         .card-title {
             font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 1rem;
-            font-weight: 600;
+            font-size: 1.6rem;
+            color: var(--dark-blue);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
         }
         
         .card-content {
             color: var(--gray-dark);
-            line-height: 1.8;
+            line-height: 1.9;
+            font-size: 1.05rem;
         }
         
         .card-content ul {
             list-style: none;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         
         .card-content li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
+            padding: 0.8rem 0;
+            padding-left: 2rem;
             position: relative;
+            font-size: 1.02rem;
         }
         
         .card-content li::before {
@@ -417,262 +465,269 @@
             left: 0;
             color: var(--secondary-blue);
             font-weight: bold;
+            font-size: 1.2rem;
         }
         
         /* Process Steps */
         .process-steps {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            max-width: 900px;
+            gap: 2.5rem;
+            max-width: 950px;
             margin: 0 auto;
         }
         
         .step {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: flex-start;
-            padding: 2rem;
+            padding: 2.5rem;
             background: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.08);
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            box-shadow: 0 8px 35px rgba(0, 82, 204, 0.08);
+            transition: all 0.4s ease;
+            border-left: 4px solid transparent;
         }
         
         .step:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(30, 58, 138, 0.12);
+            transform: translateX(12px);
+            box-shadow: 0 12px 45px rgba(0, 82, 204, 0.15);
+            border-left-color: var(--secondary-blue);
         }
         
         .step-number {
             flex-shrink: 0;
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
             color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
             font-family: var(--font-display);
+            box-shadow: 0 5px 20px rgba(46, 91, 255, 0.3);
         }
         
         .step-content h3 {
             font-family: var(--font-display);
-            color: var(--primary-blue);
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .step-content p {
-            color: var(--gray-dark);
-            line-height: 1.8;
-        }
-        
-        /* Target Audience */
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .audience-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-        
-        .audience-card:hover {
-            border-color: var(--secondary-blue);
-            transform: scale(1.05);
-        }
-        
-        .audience-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        
-        .audience-title {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--primary-blue);
+            color: var(--dark-blue);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
         
-        .audience-description {
+        .step-content p {
             color: var(--gray-dark);
-            line-height: 1.8;
+            line-height: 1.9;
             font-size: 1.05rem;
         }
         
-        /* Zone Section */
-        .zone-section {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: var(--white);
+        /* Contact Form Section */
+        .contact-form-section {
+            background: linear-gradient(135deg, #F0F7FF 0%, #E3F2FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form-section::before {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(46, 91, 255, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 82, 204, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-header {
             text-align: center;
+            margin-bottom: 3rem;
         }
         
-        .zone-section .section-title {
-            color: var(--white);
-        }
-        
-        .zone-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .cities-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        
-        .city-badge {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .city-badge:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-        
-        /* Benefits Section */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .benefit-item {
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .benefit-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .benefit-title {
+        .form-header h2 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-weight: 800;
         }
         
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            text-align: center;
+        .form-header p {
+            font-size: 1.15rem;
+            color: var(--gray-medium);
+            line-height: 1.8;
         }
         
-        .contact-features {
+        .form-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--gray-light);
         }
         
-        .contact-feature {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.08);
+        .form-feature {
+            text-align: center;
         }
         
-        .contact-feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .form-feature-icon {
+            font-size: 2.5rem;
             display: block;
+            margin-bottom: 0.8rem;
         }
         
-        .contact-feature h3 {
-            font-family: var(--font-display);
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-info {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(30, 58, 138, 0.15);
-            max-width: 600px;
-            margin: 3rem auto;
-        }
-        
-        .contact-info h3 {
-            font-family: var(--font-display);
-            color: var(--primary-blue);
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            margin: 1rem 0;
-            background: var(--light-blue);
-            border-radius: 10px;
-        }
-        
-        .contact-detail-icon {
-            font-size: 2rem;
-        }
-        
-        .contact-detail-text {
-            text-align: left;
-        }
-        
-        .contact-detail strong {
-            display: block;
-            color: var(--primary-blue);
+        .form-feature h4 {
+            font-size: 1rem;
             font-weight: 600;
+            color: var(--dark-blue);
             margin-bottom: 0.3rem;
+        }
+        
+        .form-feature p {
+            font-size: 0.9rem;
+            color: var(--gray-medium);
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1.8rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark-blue);
+            font-size: 0.95rem;
+        }
+        
+        .form-group label .required {
+            color: var(--error);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--gray-light);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(46, 91, 255, 0.1);
+        }
+        
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%236B778C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.5rem center;
+            padding-right: 3rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            margin-top: 1.5rem;
+            padding: 1.3rem 3.5rem;
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(46, 91, 255, 0.35);
+            font-family: var(--font-body);
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(46, 91, 255, 0.45);
+        }
+        
+        .form-note {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--light-blue);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            line-height: 1.7;
+        }
+        
+        .form-note strong {
+            color: var(--primary-blue);
         }
         
         /* Footer */
         .footer {
             background: var(--dark-blue);
             color: var(--white);
-            padding: 3rem 2rem 2rem;
+            padding: 4rem 3rem 2.5rem;
         }
         
         .footer-container {
             max-width: var(--container-width);
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
             gap: 3rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         
         .footer-section h4 {
             font-family: var(--font-display);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 1.8rem;
             color: var(--white);
+            font-weight: 700;
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
         
         .footer-section ul {
@@ -680,22 +735,24 @@
         }
         
         .footer-section li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
         
         .footer-section a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
         
         .footer-section a:hover {
             color: var(--accent-blue);
+            transform: translateX(3px);
         }
         
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
+            padding-top: 2.5rem;
             text-align: center;
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
@@ -703,84 +760,113 @@
         
         .footer-tagline {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--accent-blue);
             font-style: italic;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
         
         /* Responsive */
-        @media (max-width: 968px) {
+        @media (max-width: 1024px) {
             :root {
-                --section-padding: 50px;
+                --section-padding: 70px;
             }
             
+            .nav-container {
+                padding: 1.2rem 2rem;
+            }
+            
+            .hero {
+                padding: 100px 2rem 80px;
+            }
+            
+            .section {
+                padding: var(--section-padding) 2rem;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
             .menu-toggle {
                 display: flex;
             }
             
             .nav-menu {
                 position: fixed;
-                top: 80px;
+                top: 85px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 85px);
                 background: var(--white);
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
                 transition: left 0.3s ease;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
             }
             
             .nav-menu.active {
                 left: 0;
             }
             
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .hero-content h1 {
                 font-size: 2.3rem;
             }
             
-            .hero-visual {
-                padding: 2rem;
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
-            .cards-grid,
-            .audience-grid {
+            .cards-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 2.5rem 2rem;
+            }
+            
+            .form-features {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .step {
                 flex-direction: column;
                 text-align: center;
             }
-        }
-        
-        @media (max-width: 640px) {
-            .hero-content h1 {
-                font-size: 1.9rem;
-            }
             
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-button {
-                width: 100%;
-                text-align: center;
+            .footer-container {
+                grid-template-columns: 1fr;
             }
         }
         
-        /* Animations d'entrée */
+        /* Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -798,6 +884,43 @@
         .card:nth-child(2) { animation-delay: 0.2s; }
         .card:nth-child(3) { animation-delay: 0.3s; }
         .card:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            padding: 2rem;
+            background: linear-gradient(135deg, #E3FCEF, #C1F2D5);
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 2rem;
+            border: 2px solid var(--success);
+        }
+        
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-message h3 {
+            color: var(--success);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .success-message p {
+            color: var(--gray-dark);
+        }
     </style>
 </head>
 <body>
@@ -815,11 +938,9 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#methode">Notre Méthode</a></li>
-                <li><a href="#courtage">Courtage Crédit</a></li>
-                <li><a href="#investissement">Investissement</a></li>
-                <li><a href="#accompagnement">Accompagnement</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#apropos">À Propos</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Démarrer mon projet</a></li>
             </ul>
         </div>
     </nav>
@@ -833,19 +954,37 @@
                 <p class="hero-description">
                     Un projet immobilier commence souvent par des questions, parfois par des doutes.
                     Chez Alliance Financement, nous avons fait le choix de vous simplifier la vie.
-                    Nous vous accompagnons de A à Z, avec un seul interlocuteur, pour votre projet immobilier et votre financement, à Noisy-le-Grand, dans les villes alentours et plus largement en Île-de-France.
+                    Nous vous accompagnons de A à Z, avec un seul interlocuteur, pour votre projet immobilier et votre financement.
                 </p>
-                <div class="hero-features">
-                    <div class="hero-feature">Vous n'avez pas à coordonner plusieurs professionnels : nous nous occupons de tout.</div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Réponse garantie</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Accompagnement</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">IDF</span>
+                        <span class="stat-label">Île-de-France</span>
+                    </div>
                 </div>
-                <a href="#contact" class="cta-button">Être rappelé gratuitement</a>
+                
+                <a href="#contact" class="cta-button">
+                    Démarrer mon projet
+                    <span>→</span>
+                </a>
+                <p class="cta-subtext">✓ Gratuit et sans engagement • Réponse sous 24h</p>
             </div>
             
             <div class="hero-visual">
+                <span class="visual-badge">🏆 Expert local</span>
                 <div class="hero-visual-content">
                     <span class="hero-icon">🏠</span>
                     <h3>Courtier en crédit immobilier & conseiller immobilier</h3>
-                    <p>Noisy-le-Grand et villes alentours</p>
+                    <p>Noisy-le-Grand et villes alentours en Île-de-France</p>
                 </div>
             </div>
         </div>
@@ -855,9 +994,11 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">🤝 Un accompagnement simple, humain et rassurant</h2>
+                <span class="section-badge">🤝 Notre différence</span>
+                <h2 class="section-title">Un accompagnement simple, humain et rassurant</h2>
                 <p class="section-subtitle">
                     Acheter ou investir dans l'immobilier peut vite devenir source de stress lorsque les démarches s'accumulent.
+                    Chez Alliance Financement, vous avez un seul interlocuteur qui vous accompagne à chaque étape.
                 </p>
             </div>
             
@@ -865,30 +1006,89 @@
                 <div class="card fade-in">
                     <span class="card-icon">👤</span>
                     <h3 class="card-title">Un seul interlocuteur</h3>
-                    <p class="card-content">Vous avez un seul interlocuteur qui connaît parfaitement votre dossier et votre situation.</p>
+                    <p class="card-content">Vous n'avez pas à coordonner plusieurs professionnels. Nous nous occupons de tout, de A à Z.</p>
                 </div>
                 
                 <div class="card fade-in">
                     <span class="card-icon">📍</span>
                     <h3 class="card-title">Visibilité totale</h3>
-                    <p class="card-content">Vous savez toujours où vous en êtes dans votre projet, à chaque étape.</p>
+                    <p class="card-content">Vous savez toujours où vous en êtes dans votre projet, à chaque étape du processus.</p>
                 </div>
                 
                 <div class="card fade-in">
                     <span class="card-icon">🛡️</span>
                     <h3 class="card-title">Accompagnement continu</h3>
-                    <p class="card-content">Vous êtes accompagné à chaque étape, du premier échange jusqu'à la signature chez le notaire.</p>
+                    <p class="card-content">Nous restons à vos côtés du premier échange jusqu'à la signature chez le notaire.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Notre Accompagnement -->
-    <section class="section section-alt">
+    <!-- Notre Méthode -->
+    <section id="methode" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">🧭 Notre accompagnement de A à Z</h2>
-                <p class="section-subtitle">Un seul interlocuteur, une vision globale, une vraie sérénité.</p>
+                <span class="section-badge">🧭 Comment ça marche</span>
+                <h2 class="section-title">Une méthode claire et rassurante</h2>
+                <p class="section-subtitle">
+                    Nous savons que comprendre le déroulement d'un projet est essentiel pour avancer sereinement.
+                    C'est pourquoi nous avons mis en place une méthode structurée, pensée pour vous rassurer.
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Comprendre votre situation</h3>
+                        <p>Nous prenons le temps d'échanger, d'écouter et de répondre à vos premières questions pour bien comprendre vos besoins.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Sécuriser votre budget</h3>
+                        <p>Nous analysons votre capacité d'emprunt afin de définir un budget réaliste et sécurisé pour votre projet.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Construire le projet immobilier</h3>
+                        <p>Nous vous accompagnons dans la structuration de votre projet et dans toutes vos décisions importantes.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Monter et négocier le financement</h3>
+                        <p>Nous gérons l'intégralité du dossier et les échanges avec les banques pour obtenir les meilleures conditions.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Vous accompagner jusqu'à la signature</h3>
+                        <p>Nous restons présents et à vos côtés jusqu'à la signature finale chez le notaire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💼 Nos services</span>
+                <h2 class="section-title">Notre accompagnement de A à Z</h2>
+                <p class="section-subtitle">
+                    Un seul interlocuteur, une vision globale, une vraie sérénité pour votre projet immobilier.
+                </p>
             </div>
             
             <div class="cards-grid">
@@ -910,11 +1110,24 @@
                     <h3 class="card-title">Le financement</h3>
                     <div class="card-content">
                         <ul>
-                            <li>Étude de faisabilité</li>
+                            <li>Étude de faisabilité complète</li>
                             <li>Montage complet du dossier</li>
                             <li>Mise en concurrence des banques</li>
-                            <li>Négociation des conditions</li>
+                            <li>Négociation des meilleures conditions</li>
                             <li>Suivi jusqu'à la signature</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <span class="card-icon">📊</span>
+                    <h3 class="card-title">Investissement locatif</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Analyse de votre profil investisseur</li>
+                            <li>Étude de rentabilité détaillée</li>
+                            <li>Structuration du financement optimal</li>
+                            <li>Vision long terme et stratégie patrimoniale</li>
                         </ul>
                     </div>
                 </div>
@@ -922,27 +1135,33 @@
         </div>
     </section>
 
-    <!-- À qui s'adresse -->
-    <section class="section">
+    <!-- À Propos -->
+    <section id="apropos" class="section section-alt">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">👨‍👩‍👧‍👦 À qui s'adresse notre accompagnement ?</h2>
+                <span class="section-badge">👤 Qui sommes-nous</span>
+                <h2 class="section-title">Alliance Financement, un accompagnement humain et de confiance</h2>
+                <p class="section-subtitle" style="max-width: 850px; font-size: 1.2rem; line-height: 2;">
+                    Alliance Financement est née d'une volonté simple : <strong style="color: var(--primary-blue);">remettre la clarté, l'écoute et la sérénité au cœur des projets immobiliers.</strong>
+                    <br><br>
+                    Chaque client est accompagné avec sérieux, disponibilité et engagement, qu'il s'agisse d'un premier achat ou d'un investissement.
+                </p>
             </div>
             
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <span class="audience-icon">🔑</span>
-                    <h3 class="audience-title">Primo-accédants</h3>
-                    <p class="audience-description">
+            <div class="cards-grid" style="margin-top: 4rem;">
+                <div class="card fade-in">
+                    <span class="card-icon">🔑</span>
+                    <h3 class="card-title">Primo-accédants</h3>
+                    <p class="card-content">
                         Vous achetez pour la première fois et vous avez besoin d'être guidé et rassuré.
                         Nous prenons le temps de vous expliquer chaque étape, simplement et clairement.
                     </p>
                 </div>
                 
-                <div class="audience-card">
-                    <span class="audience-icon">📊</span>
-                    <h3 class="audience-title">Investisseurs</h3>
-                    <p class="audience-description">
+                <div class="card fade-in">
+                    <span class="card-icon">📈</span>
+                    <h3 class="card-title">Investisseurs</h3>
+                    <p class="card-content">
                         Vous souhaitez investir avec méthode et cohérence.
                         Nous vous accompagnons sur le projet et son financement, avec une vision long terme.
                     </p>
@@ -951,343 +1170,123 @@
         </div>
     </section>
 
-    <!-- Zone d'intervention -->
-    <section class="section zone-section">
+    <!-- Contact Form Section -->
+    <section id="contact" class="section contact-form-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">📍 Zone d'intervention</h2>
-                <p class="section-subtitle">
-                    Basés à Noisy-le-Grand, nous accompagnons nos clients dans les villes alentours et plus largement en Île-de-France, selon la nature de votre projet.
-                </p>
-            </div>
-            
-            <div class="cities-list">
-                <span class="city-badge">Noisy-le-Grand</span>
-                <span class="city-badge">Champs-sur-Marne</span>
-                <span class="city-badge">Bry-sur-Marne</span>
-                <span class="city-badge">Gournay-sur-Marne</span>
-                <span class="city-badge">Île-de-France</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pourquoi choisir -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">⭐ Pourquoi choisir Alliance Financement ?</h2>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <span class="benefit-icon">🎯</span>
-                    <h3 class="benefit-title">Interlocuteur unique</h3>
-                    <p>Du début à la fin</p>
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>📞 Parlons de votre projet immobilier</h2>
+                    <p>
+                        Vous avez des questions ou des doutes ? Nous sommes là pour vous accompagner.
+                        Remplissez ce formulaire et nous vous recontactons sous 24h.
+                    </p>
                 </div>
                 
-                <div class="benefit-item">
-                    <span class="benefit-icon">❤️</span>
-                    <h3 class="benefit-title">Accompagnement humain</h3>
-                    <p>Et pédagogique</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <span class="benefit-icon">🌐</span>
-                    <h3 class="benefit-title">Prise en charge globale</h3>
-                    <p>Du projet</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <span class="benefit-icon">🏘️</span>
-                    <h3 class="benefit-title">Expertise locale</h3>
-                    <p>En Île-de-France</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <span class="benefit-icon">✅</span>
-                    <h3 class="benefit-title">Suivi constant</h3>
-                    <p>Jusqu'à la signature</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Notre Méthode -->
-    <section id="methode" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Une méthode claire et rassurante, avec un seul interlocuteur</h2>
-                <p class="section-subtitle">
-                    Chez Alliance Financement, nous savons que comprendre le déroulement d'un projet est essentiel pour avancer sereinement.
-                    C'est pourquoi nous avons mis en place une méthode structurée, pensée pour vous rassurer et vous guider.
-                </p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Comprendre votre situation</h3>
-                        <p>Nous prenons le temps d'échanger, d'écouter et de répondre à vos premières questions.</p>
+                <div class="form-features">
+                    <div class="form-feature">
+                        <span class="form-feature-icon">📩</span>
+                        <h4>Étude gratuite</h4>
+                        <p>Sans engagement</p>
+                    </div>
+                    <div class="form-feature">
+                        <span class="form-feature-icon">⏱️</span>
+                        <h4>Réponse rapide</h4>
+                        <p>Sous 24h</p>
+                    </div>
+                    <div class="form-feature">
+                        <span class="form-feature-icon">🤝</span>
+                        <h4>Accompagnement</h4>
+                        <p>De A à Z</p>
                     </div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Sécuriser votre budget</h3>
-                        <p>Nous analysons votre capacité d'emprunt afin de définir un budget réaliste et sécurisé.</p>
+                <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prenom">Prénom <span class="required">*</span></label>
+                            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                        </div>
                     </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Construire le projet immobilier</h3>
-                        <p>Nous vous accompagnons dans la structuration de votre projet et dans vos choix.</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telephone">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                        </div>
                     </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Monter et négocier le financement</h3>
-                        <p>Nous gérons l'intégralité du dossier et les échanges avec les banques.</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="typeContrat">Type de contrat <span class="required">*</span></label>
+                            <select id="typeContrat" name="typeContrat" required>
+                                <option value="">Sélectionnez votre situation</option>
+                                <option value="CDI">CDI (Contrat à Durée Indéterminée)</option>
+                                <option value="CDD">CDD (Contrat à Durée Déterminée)</option>
+                                <option value="Fonctionnaire">Fonctionnaire</option>
+                                <option value="Indépendant">Indépendant / Auto-entrepreneur</option>
+                                <option value="Profession libérale">Profession libérale</option>
+                                <option value="Autre">Autre situation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="trancheSalaire">Tranche de revenus annuels <span class="required">*</span></label>
+                            <select id="trancheSalaire" name="trancheSalaire" required>
+                                <option value="">Sélectionnez votre tranche</option>
+                                <option value="Moins de 20k">Moins de 20 000 €</option>
+                                <option value="20-25k">20 000 € - 25 000 €</option>
+                                <option value="25-30k">25 000 € - 30 000 €</option>
+                                <option value="30-35k">30 000 € - 35 000 €</option>
+                                <option value="35-40k">35 000 € - 40 000 €</option>
+                                <option value="40-50k">40 000 € - 50 000 €</option>
+                                <option value="50-60k">50 000 € - 60 000 €</option>
+                                <option value="60-75k">60 000 € - 75 000 €</option>
+                                <option value="75-100k">75 000 € - 100 000 €</option>
+                                <option value="Plus de 100k">Plus de 100 000 €</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Vous accompagner jusqu'à la signature</h3>
-                        <p>Nous restons présents jusqu'à la signature chez le notaire.</p>
+                    
+                    <div class="form-group">
+                        <label for="typeProjet">Type de projet</label>
+                        <select id="typeProjet" name="typeProjet">
+                            <option value="">Sélectionnez votre projet (optionnel)</option>
+                            <option value="Résidence principale">Résidence principale</option>
+                            <option value="Investissement locatif">Investissement locatif</option>
+                            <option value="Résidence secondaire">Résidence secondaire</option>
+                            <option value="Renégociation">Renégociation de crédit</option>
+                        </select>
                     </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p class="hero-tagline">👉 À vos côtés, du premier doute à la signature.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courtier en Crédit -->
-    <section id="courtage" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">💰 Courtier en crédit immobilier à Noisy-le-Grand et alentours</h2>
-                <p class="section-subtitle">
-                    Obtenir un crédit immobilier peut être source d'inquiétude.
-                    Chez Alliance Financement, nous vous accompagnons avec méthode, transparence et pédagogie.
-                </p>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <span class="card-icon">📊</span>
-                    <h3 class="card-title">Étude de capacité</h3>
-                    <p class="card-content">L'étude de votre capacité d'emprunt pour un budget réaliste.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">📁</span>
-                    <h3 class="card-title">Montage du dossier</h3>
-                    <p class="card-content">Le montage complet de votre dossier de financement.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">🏦</span>
-                    <h3 class="card-title">Relations bancaires</h3>
-                    <p class="card-content">Les échanges avec les banques et la négociation des conditions.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">✍️</span>
-                    <h3 class="card-title">Suivi complet</h3>
-                    <p class="card-content">Le suivi jusqu'à la signature de votre prêt immobilier.</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-size: 1.2rem; color: var(--primary-blue); font-weight: 600;">
-                    👉 Vous échangez avec un seul interlocuteur, qui connaît parfaitement votre dossier.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Investissement Locatif -->
-    <section id="investissement" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">📊 Investir sereinement avec un interlocuteur unique</h2>
-                <p class="section-subtitle">
-                    Un investissement locatif doit être réfléchi et sécurisé.
-                    Nous vous accompagnons dans la construction d'un projet cohérent, rentable et adapté à votre situation.
-                </p>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <span class="card-icon">👤</span>
-                    <h3 class="card-title">Analyse de votre profil</h3>
-                    <p class="card-content">Nous étudions votre situation financière et vos objectifs d'investissement.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">💹</span>
-                    <h3 class="card-title">Étude de rentabilité</h3>
-                    <p class="card-content">Nous analysons la rentabilité de votre projet d'investissement locatif.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">🏗️</span>
-                    <h3 class="card-title">Structuration du financement</h3>
-                    <p class="card-content">Nous structurons le financement optimal pour votre investissement.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">🔮</span>
-                    <h3 class="card-title">Vision long terme</h3>
-                    <p class="card-content">Nous vous aidons à bâtir une stratégie patrimoniale durable.</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-size: 1.2rem; color: var(--primary-blue); font-weight: 600;">
-                    👉 Vous avancez en confiance, sans dispersion.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Accompagnement Immobilier -->
-    <section id="accompagnement" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">🏡 Un accompagnement immobilier complet, de A à Z</h2>
-                <p class="section-subtitle">
-                    Chez Alliance Financement, nous allons au-delà du simple courtage en crédit.
-                </p>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <span class="card-icon">💭</span>
-                    <h3 class="card-title">Dans la réflexion</h3>
-                    <p class="card-content">Nous vous aidons à clarifier vos objectifs et vos besoins.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">🏗️</span>
-                    <h3 class="card-title">Dans la structuration</h3>
-                    <p class="card-content">Nous structurons votre projet immobilier de manière cohérente.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">💰</span>
-                    <h3 class="card-title">Dans le financement</h3>
-                    <p class="card-content">Nous gérons l'intégralité de votre financement immobilier.</p>
-                </div>
-                
-                <div class="card fade-in">
-                    <span class="card-icon">✍️</span>
-                    <h3 class="card-title">Jusqu'à la signature</h3>
-                    <p class="card-content">Nous vous accompagnons jusqu'à la signature chez le notaire.</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-size: 1.2rem; color: var(--primary-blue); font-weight: 600;">
-                    👉 Un seul interlocuteur pour tout votre projet immobilier.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- À Propos -->
-    <section id="apropos" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">👤 Alliance Financement, un accompagnement humain et de confiance</h2>
-                <p class="section-subtitle" style="max-width: 800px; font-size: 1.15rem; line-height: 2;">
-                    Alliance Financement est née d'une volonté simple :
-                    <br><br>
-                    <strong style="color: var(--primary-blue); font-size: 1.3rem;">
-                        👉 Remettre la clarté, l'écoute et la sérénité au cœur des projets immobiliers.
-                    </strong>
-                    <br><br>
-                    Chaque client est accompagné avec sérieux, disponibilité et engagement, qu'il s'agisse d'un premier achat ou d'un investissement.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">📞 Parlons de votre projet immobilier</h2>
-                <p class="section-subtitle">
-                    Vous avez des questions ou des doutes ?<br>
-                    Nous sommes là pour vous accompagner.
-                </p>
-            </div>
-            
-            <div class="contact-features">
-                <div class="contact-feature">
-                    <span class="contact-feature-icon">📩</span>
-                    <h3>Étude gratuite</h3>
-                    <p>Sans engagement</p>
-                </div>
-                
-                <div class="contact-feature">
-                    <span class="contact-feature-icon">⏱️</span>
-                    <h3>Réponse rapide</h3>
-                    <p>Sous 24h</p>
-                </div>
-                
-                <div class="contact-feature">
-                    <span class="contact-feature-icon">🤝</span>
-                    <h3>Accompagnement complet</h3>
-                    <p>De A à Z</p>
-                </div>
-            </div>
-            
-            <div class="contact-info">
-                <h3>Contactez-nous</h3>
-                
-                <div class="contact-detail">
-                    <span class="contact-detail-icon">📧</span>
-                    <div class="contact-detail-text">
-                        <strong>Email</strong>
-                        <a href="mailto:contact@alliancefinancement.fr" style="color: var(--gray-dark); text-decoration: none;">contact@alliancefinancement.fr</a>
+                    
+                    <div class="form-group">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" placeholder="Décrivez-nous votre projet et vos besoins..."></textarea>
                     </div>
-                </div>
-                
-                <div class="contact-detail">
-                    <span class="contact-detail-icon">📱</span>
-                    <div class="contact-detail-text">
-                        <strong>Téléphone</strong>
-                        <a href="tel:+33123456789" style="color: var(--gray-dark); text-decoration: none;">01 23 45 67 89</a>
+                    
+                    <button type="submit" class="submit-button">Envoyer ma demande →</button>
+                    
+                    <div class="form-note">
+                        <strong>🔒 Protection de vos données</strong><br>
+                        Vos informations sont strictement confidentielles et utilisées uniquement pour vous proposer un accompagnement personnalisé.
+                        ✓ Aucune transmission à des tiers • ✓ Données sécurisées • ✓ Respect RGPD
                     </div>
-                </div>
+                </form>
                 
-                <div class="contact-detail">
-                    <span class="contact-detail-icon">📍</span>
-                    <div class="contact-detail-text">
-                        <strong>Localisation</strong>
-                        Noisy-le-Grand et Île-de-France
-                    </div>
+                <div class="success-message" id="successMessage">
+                    <h3>✅ Merci pour votre demande !</h3>
+                    <p>Nous avons bien reçu votre message et nous vous recontacterons sous 24h.</p>
+                    <p><strong>À vos côtés, du premier doute à la signature</strong></p>
                 </div>
-            </div>
-            
-            <div style="margin-top: 3rem;">
-                <a href="mailto:contact@alliancefinancement.fr" class="cta-button">Être rappelé gratuitement</a>
-            </div>
-            
-            <div style="margin-top: 3rem;">
-                <p class="hero-tagline" style="color: var(--primary-blue);">👉 À vos côtés, du premier doute à la signature</p>
             </div>
         </div>
     </section>
@@ -1298,17 +1297,18 @@
             <div class="footer-section">
                 <h4>Alliance Financement</h4>
                 <p class="footer-tagline">À vos côtés, du premier doute à la signature</p>
-                <p style="margin-top: 1rem;">
+                <p>
                     Courtier en crédit immobilier et conseiller immobilier à Noisy-le-Grand et en Île-de-France.
+                    Un accompagnement complet pour votre projet immobilier.
                 </p>
             </div>
             
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="#courtage">Courtage en crédit immobilier</a></li>
-                    <li><a href="#investissement">Investissement locatif</a></li>
-                    <li><a href="#accompagnement">Accompagnement immobilier</a></li>
+                    <li><a href="#services">Courtage en crédit</a></li>
+                    <li><a href="#services">Investissement locatif</a></li>
+                    <li><a href="#services">Accompagnement A à Z</a></li>
                     <li><a href="#methode">Notre méthode</a></li>
                 </ul>
             </div>
@@ -1317,6 +1317,7 @@
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#methode">Notre méthode</a></li>
                     <li><a href="#apropos">À propos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1329,7 +1330,7 @@
                     <li>Champs-sur-Marne</li>
                     <li>Bry-sur-Marne</li>
                     <li>Gournay-sur-Marne</li>
-                    <li>Île-de-France</li>
+                    <li>Toute l'Île-de-France</li>
                 </ul>
             </div>
         </div>
@@ -1363,9 +1364,9 @@
             const currentScroll = window.pageYOffset;
             
             if (currentScroll > 100) {
-                nav.style.boxShadow = '0 2px 20px rgba(30, 58, 138, 0.15)';
+                nav.style.boxShadow = '0 2px 30px rgba(0, 82, 204, 0.15)';
             } else {
-                nav.style.boxShadow = '0 2px 20px rgba(30, 58, 138, 0.08)';
+                nav.style.boxShadow = '0 2px 30px rgba(0, 82, 204, 0.08)';
             }
             
             lastScroll = currentScroll;
@@ -1385,9 +1386,38 @@
             });
         }, observerOptions);
         
-        document.querySelectorAll('.card, .step, .audience-card').forEach(el => {
+        document.querySelectorAll('.card, .step').forEach(el => {
             observer.observe(el);
         });
+        
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Récupérer les données du formulaire
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Ici, vous pouvez envoyer les données à votre serveur
+            // Pour l'instant, on simule un envoi réussi
+            console.log('Données du formulaire:', data);
+            
+            // Afficher le message de succès
+            const form = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            form.style.display = 'none';
+            successMessage.classList.add('show');
+            
+            // Optionnel : réinitialiser le formulaire après quelques secondes
+            setTimeout(() => {
+                form.reset();
+                form.style.display = 'grid';
+                successMessage.classList.remove('show');
+            }, 8000);
+            
+            return false;
+        }
     </script>
 </body>
 </html>
