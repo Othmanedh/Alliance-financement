@@ -1,48 +1,100 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- ========================================
+         SEO - BALISES META ESSENTIELLES
+    ========================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alliance Financement - Courtier en crédit immobilier à Noisy-le-Grand">
-    <title>Alliance Financement - Courtier en crédit immobilier</title>
     
-    <!-- ========================================
-         POLICES GOOGLE FONTS
-         Playfair Display : Titres élégants
-         Inter : Texte moderne et lisible
-    ========================================= -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Titre optimisé SEO (60 caractères max) -->
+    <title>Alliance Financement | Courtier Crédit Immobilier Noisy-le-Grand</title>
+    
+    <!-- Meta description (155-160 caractères) -->
+    <meta name="description" content="Courtier en crédit immobilier à Noisy-le-Grand. Un seul interlocuteur pour votre projet immobilier et financement. Accompagnement de A à Z en Île-de-France. Gratuit et sans engagement.">
+    
+    <!-- Mots-clés pertinents -->
+    <meta name="keywords" content="courtier crédit immobilier, courtier Noisy-le-Grand, financement immobilier, crédit immobilier Île-de-France, conseiller immobilier, achat immobilier, investissement locatif">
+    
+    <!-- Auteur et Copyright -->
+    <meta name="author" content="Alliance Financement">
+    <meta name="copyright" content="Alliance Financement 2025">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph pour réseaux sociaux -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alliance Financement - Courtier Crédit Immobilier">
+    <meta property="og:description" content="Un seul interlocuteur pour votre projet immobilier et financement. Accompagnement personnalisé en Île-de-France.">
+    <meta property="og:url" content="https://alliance-financement.fr">
+    <meta property="og:site_name" content="Alliance Financement">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alliance Financement - Courtier Crédit Immobilier">
+    <meta name="twitter:description" content="Un seul interlocuteur pour votre projet immobilier et financement">
+    
+    <!-- Canonical URL (à adapter selon votre domaine) -->
+    <link rel="canonical" href="https://alliance-financement.fr">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Google Fonts - Optimisé avec preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org pour Google (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Alliance Financement",
+      "description": "Courtier en crédit immobilier et conseiller immobilier à Noisy-le-Grand",
+      "url": "https://alliance-financement.fr",
+      "telephone": "+33-1-XX-XX-XX-XX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Noisy-le-Grand",
+        "addressLocality": "Noisy-le-Grand",
+        "addressRegion": "Île-de-France",
+        "postalCode": "93160",
+        "addressCountry": "FR"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.8499",
+          "longitude": "2.5525"
+        },
+        "geoRadius": "50000"
+      },
+      "serviceType": ["Courtage en crédit immobilier", "Conseil en financement immobilier"],
+      "priceRange": "Gratuit"
+    }
+    </script>
     
     <style>
         /* ========================================
-           VARIABLES CSS - COULEURS DU SITE
-           Inspiré de Mon Chasseur Immo
+           VARIABLES CSS
         ========================================= */
         :root {
             /* Couleurs principales */
-            --primary-dark: #2c3e50;        /* Gris foncé pour texte */
-            --secondary-dark: #34495e;      /* Gris moyen */
-            --accent-orange: #f39c12;       /* Orange doré pour CTA */
-            --accent-warm: #e67e22;         /* Orange chaud */
-            
-            /* Couleurs neutres */
+            --primary-dark: #2c3e50;
+            --accent-turquoise: #4ecdc4;
+            --accent-green: #3dd598;
             --white: #ffffff;
-            --off-white: #f8f9fa;
-            --gray-light: #ecf0f1;
+            --text-dark: #2c3e50;
             --gray-medium: #7f8c8d;
-            --success-green: #27ae60;
             
             /* Typographie */
-            --font-display: 'Playfair Display', serif;  /* Pour les titres */
-            --font-body: 'Inter', sans-serif;           /* Pour le texte */
-            
-            /* Espacements */
-            --section-padding: 100px;
-            --container-width: 1200px;
+            --font-main: 'Raleway', sans-serif;
         }
         
         /* ========================================
-           RESET CSS DE BASE
+           RESET CSS
         ========================================= */
         * {
             margin: 0;
@@ -51,55 +103,47 @@
         }
         
         html {
-            scroll-behavior: smooth;  /* Défilement fluide pour les ancres */
+            scroll-behavior: smooth;
         }
         
         body {
-            font-family: var(--font-body);
-            color: var(--primary-dark);
+            font-family: var(--font-main);
+            color: var(--text-dark);
             line-height: 1.7;
-            overflow-x: hidden;  /* Empêche le scroll horizontal */
+            overflow-x: hidden;
         }
         
         /* ========================================
-           NAVIGATION FIXE EN HAUT
+           NAVIGATION FIXE
         ========================================= */
         nav {
-            position: fixed;              /* Reste en haut lors du scroll */
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255,255,255,0.98);  /* Fond blanc semi-transparent */
-            backdrop-filter: blur(10px);         /* Effet de flou en arrière */
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            z-index: 1000;                       /* Au-dessus de tout */
+            z-index: 1000;
             transition: all 0.3s ease;
         }
         
         .nav-container {
-            max-width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
             padding: 1.5rem 3rem;
             display: flex;
-            justify-content: space-between;  /* Logo à gauche, menu à droite */
+            justify-content: space-between;
             align-items: center;
         }
         
-        /* Logo de l'entreprise */
         .logo {
-            font-family: var(--font-display);
             font-size: 1.8rem;
             font-weight: 900;
             color: var(--primary-dark);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
         
-        .logo:hover {
-            color: var(--accent-orange);
-        }
-        
-        /* Menu de navigation */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -110,54 +154,28 @@
         .nav-menu a {
             color: var(--primary-dark);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
         }
         
-        /* Effet de soulignement au survol */
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-orange);
-            transition: width 0.3s ease;
+        .nav-menu a:hover {
+            color: var(--accent-turquoise);
         }
         
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        /* Bouton CTA dans la navigation */
         .nav-cta {
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-warm));
+            background: linear-gradient(135deg, var(--accent-turquoise), var(--accent-green));
             color: white !important;
             padding: 0.9rem 2rem;
             border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(243,156,18,0.3);
+            box-shadow: 0 4px 15px rgba(78,205,196,0.3);
         }
         
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(243,156,18,0.4);
-        }
-        
-        .nav-cta::after {
-            display: none;  /* Pas de soulignement pour le bouton */
-        }
-        
-        /* Bouton hamburger pour mobile */
         .menu-toggle {
-            display: none;  /* Caché sur desktop */
+            display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding: 8px;
         }
         
         .menu-toggle span {
@@ -165,23 +183,25 @@
             height: 3px;
             background: var(--primary-dark);
             border-radius: 3px;
-            transition: all 0.3s ease;
         }
         
         /* ========================================
-           SECTION HERO AVEC ANIMATION CANVAS
+           HERO SECTION - COPIE MON CHASSEUR IMMO
+           Avec vidéo en fond
         ========================================= */
         .hero {
-            margin-top: 90px;      /* Espace pour la nav fixe */
-            min-height: 100vh;     /* Pleine hauteur d'écran */
+            margin-top: 80px;
+            min-height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
             overflow: hidden;
+            text-align: center;
         }
         
-        /* Canvas pour l'animation de fond */
-        #animationCanvas {
+        /* Vidéo de fond */
+        .video-background {
             position: absolute;
             top: 0;
             left: 0;
@@ -190,224 +210,200 @@
             z-index: 0;
         }
         
-        /* Overlay sombre pour rendre le texte lisible */
-        .hero-overlay {
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        
+        /* Overlay sombre sur la vidéo */
+        .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Dégradé gris foncé semi-transparent */
-            background: linear-gradient(135deg, 
-                rgba(44,62,80,0.88) 0%, 
-                rgba(52,73,94,0.85) 50%,
-                rgba(44,62,80,0.88) 100%
-            );
+            background: rgba(0, 0, 0, 0.45);
             z-index: 1;
         }
         
-        /* Contenu du Hero */
+        /* Contenu Hero */
         .hero-content {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 3rem;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;  /* Texte plus large, carte plus petite */
-            gap: 5rem;
-            align-items: center;
             position: relative;
-            z-index: 2;  /* Au-dessus de l'overlay */
+            z-index: 2;
+            max-width: 1200px;
+            padding: 0 3rem;
         }
         
-        /* Partie texte du Hero */
-        .hero-text h1 {
-            font-family: var(--font-display);
-            font-size: 4rem;
+        /* Titre principal */
+        .hero-content h1 {
+            font-size: 3.5rem;
             color: white;
-            margin-bottom: 2rem;
             font-weight: 900;
-            line-height: 1.15;
-            text-shadow: 0 2px 30px rgba(0,0,0,0.5);  /* Ombre pour lisibilité */
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
         
-        .hero-tagline {
+        /* Sous-titre */
+        .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--accent-orange);
-            font-style: italic;
-            font-weight: 600;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-description {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.9;
-            margin-bottom: 3rem;
-        }
-        
-        /* Statistiques 24h / 100% / IDF */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
-            padding: 2.5rem 0;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: 2.8rem;
-            color: var(--accent-orange);
-            font-weight: 900;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: rgba(255,255,255,0.9);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        
-        /* Bouton Call-to-Action principal */
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-warm));
             color: white;
-            padding: 1.3rem 3.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.15rem;
-            box-shadow: 0 10px 40px rgba(243,156,18,0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(243,156,18,0.5);
-        }
-        
-        .cta-subtext {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.85);
-            margin-top: 1rem;
+            font-weight: 500;
+            margin-bottom: 4rem;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.3);
         }
         
         /* ========================================
-           CARTE VISUELLE (CARRÉ BLANC)
-           MODIFIÉ : Format carré au lieu de rectangle
+           3 CARTES BLANCHES - COPIE EXACTE MCI
         ========================================= */
-        .hero-card {
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .card {
             background: white;
-            padding: 2.5rem;                    /* Padding réduit pour format carré */
-            border-radius: 30px;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
-            position: relative;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             text-align: center;
-            aspect-ratio: 1 / 1;                /* Force un format carré */
+            transition: all 0.3s ease;
+            /* Animation d'apparition */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+        
+        /* Icônes des cartes */
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #e8f8f7, #d4f1ef);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            max-width: 380px;                   /* Largeur maximale pour le carré */
-            margin: 0 auto;                     /* Centre le carré */
+            justify-content: center;
+            font-size: 2.5rem;
         }
         
-        /* Badge "Expert local" en haut à droite */
-        .badge {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            background: linear-gradient(135deg, var(--success-green), #2ecc71);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 20px rgba(39,174,96,0.4);
-            white-space: nowrap;  /* Empêche le retour à la ligne */
-        }
-        
-        /* Icône de maison (emoji) */
-        .hero-icon {
-            font-size: 5rem;                    /* Réduit pour s'adapter au carré */
-            margin-bottom: 1.5rem;
-            animation: float 4s ease-in-out infinite;
-        }
-        
-        /* Animation de flottement de l'icône */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        .hero-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.6rem;                  /* Réduit pour s'adapter au carré */
+        .card h3 {
+            font-size: 1.3rem;
             color: var(--primary-dark);
             margin-bottom: 1rem;
-            font-weight: 900;
-            line-height: 1.3;
+            font-weight: 700;
         }
         
-        .hero-card p {
+        .card p {
+            font-size: 1rem;
             color: var(--gray-medium);
-            font-size: 0.95rem;                 /* Légèrement réduit */
             line-height: 1.6;
+        }
+        
+        /* ========================================
+           BOUTON VERT TURQUOISE - COPIE MCI
+        ========================================= */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: linear-gradient(135deg, var(--accent-turquoise), var(--accent-green));
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 30px rgba(78,205,196,0.4);
+            transition: all 0.3s ease;
+            /* Animation d'apparition */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(78,205,196,0.5);
+        }
+        
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Textes sous le bouton */
+        .hero-footer {
+            margin-top: 2rem;
+            color: white;
+            font-size: 0.95rem;
+            /* Animation d'apparition */
+            opacity: 0;
+            animation: fadeIn 0.8s ease 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .hero-footer p {
+            margin: 0.5rem 0;
         }
         
         /* ========================================
            SECTIONS DU SITE
         ========================================= */
-        .section {
-            padding: var(--section-padding) 3rem;
+        section {
+            padding: 100px 3rem;
         }
         
-        /* Section avec fond gris clair (alternance) */
         .section-alt {
-            background: var(--off-white);
+            background: #f8f9fa;
         }
         
         .container {
-            max-width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        /* En-tête de section */
         .section-header {
             text-align: center;
             margin-bottom: 5rem;
         }
         
-        /* Badge au-dessus du titre */
-        .badge-section {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-warm));
-            color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(243,156,18,0.3);
-        }
-        
         h2 {
-            font-family: var(--font-display);
-            font-size: 3.2rem;
+            font-size: 3rem;
             color: var(--primary-dark);
             margin-bottom: 1.5rem;
             font-weight: 900;
-            line-height: 1.2;
         }
         
         .subtitle {
@@ -415,339 +411,59 @@
             color: var(--gray-medium);
             max-width: 750px;
             margin: 0 auto;
-            line-height: 1.8;
         }
         
-        /* ========================================
-           GRILLE DE CARTES (3 colonnes)
-        ========================================= */
-        .cards {
+        /* Grille de services */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
-            margin-top: 4rem;
         }
         
-        .card {
+        .service-card {
             background: white;
             padding: 3rem;
             border-radius: 20px;
             box-shadow: 0 5px 30px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
+            transition: all 0.3s ease;
         }
         
-        /* Effet au survol de la carte */
-        .card:hover {
-            transform: translateY(-10px);           /* Monte légèrement */
-            border-color: var(--accent-orange);     /* Bordure orange */
+        .service-card:hover {
+            transform: translateY(-10px);
             box-shadow: 0 15px 50px rgba(0,0,0,0.15);
         }
         
-        .card-icon {
+        .service-icon {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            display: block;
         }
         
-        .card h3 {
-            font-family: var(--font-display);
+        .service-card h3 {
             font-size: 1.6rem;
-            color: var(--primary-dark);
             margin-bottom: 1rem;
             font-weight: 700;
         }
         
-        .card p {
-            color: var(--gray-dark);
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-        
-        /* Liste à puces dans les cartes */
-        .card ul {
+        .service-card ul {
             list-style: none;
             margin-top: 1.5rem;
         }
         
-        .card li {
+        .service-card li {
             padding: 0.8rem 0 0.8rem 2rem;
             position: relative;
-            line-height: 1.7;
         }
         
-        /* Coche verte avant chaque élément */
-        .card li::before {
+        .service-card li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-warm);
+            color: var(--accent-turquoise);
             font-weight: bold;
             font-size: 1.2rem;
         }
         
-        /* ========================================
-           ÉTAPES DE LA MÉTHODE
-        ========================================= */
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            max-width: 950px;
-            margin: 0 auto;
-        }
-        
-        .step {
-            display: flex;
-            gap: 2.5rem;
-            padding: 2.5rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 35px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
-            border-left: 4px solid transparent;
-            align-items: flex-start;
-        }
-        
-        /* Effet au survol de l'étape */
-        .step:hover {
-            transform: translateX(12px);               /* Glisse vers la droite */
-            border-left-color: var(--accent-warm);     /* Bordure orange à gauche */
-            box-shadow: 0 12px 45px rgba(0,0,0,0.15);
-        }
-        
-        /* Numéro de l'étape (cercle) */
-        .step-num {
-            flex-shrink: 0;  /* Ne rétrécit pas */
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-warm));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 900;
-            font-family: var(--font-display);
-            box-shadow: 0 5px 20px rgba(243,156,18,0.3);
-        }
-        
-        .step h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        
-        .step p {
-            color: var(--gray-dark);
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-        
-        /* ========================================
-           FORMULAIRE DE CONTACT
-        ========================================= */
-        .form-section {
-            background: linear-gradient(135deg, var(--off-white) 0%, #f5f5f5 100%);
-        }
-        
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 4rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .form-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .form-header h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .form-header p {
-            font-size: 1.15rem;
-            color: var(--gray-medium);
-            line-height: 1.8;
-        }
-        
-        /* 3 badges de réassurance */
-        .form-features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
-            padding: 2rem 0;
-            border-top: 1px solid var(--gray-light);
-            border-bottom: 1px solid var(--gray-light);
-        }
-        
-        .form-feature {
-            text-align: center;
-        }
-        
-        .form-feature span {
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-        
-        .form-feature h4 {
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 0.3rem;
-        }
-        
-        .form-feature p {
-            font-size: 0.9rem;
-            color: var(--gray-medium);
-        }
-        
-        /* Structure du formulaire */
-        form {
-            display: grid;
-            gap: 1.8rem;
-        }
-        
-        /* Ligne avec 2 champs côte à côte */
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.8rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-        }
-        
-        label {
-            font-weight: 700;
-            color: var(--primary-dark);
-            font-size: 0.95rem;
-        }
-        
-        .required {
-            color: #e74c3c;  /* Astérisque rouge pour champs obligatoires */
-        }
-        
-        /* Champs de formulaire */
-        input, select, textarea {
-            padding: 1rem 1.5rem;
-            border: 2px solid var(--gray-light);
-            border-radius: 12px;
-            font-size: 1rem;
-            font-family: var(--font-body);
-            transition: all 0.3s ease;
-            background: white;
-        }
-        
-        /* État focus (quand on clique dedans) */
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent-warm);
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
-        }
-        
-        select {
-            cursor: pointer;
-            appearance: none;  /* Enlève la flèche par défaut */
-            /* Ajoute une flèche personnalisée */
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%237f8c8d' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1.5rem center;
-            padding-right: 3rem;
-        }
-        
-        textarea {
-            min-height: 120px;
-            resize: vertical;  /* Permet le redimensionnement vertical seulement */
-        }
-        
-        /* Bouton de soumission */
-        .submit-btn {
-            margin-top: 1.5rem;
-            padding: 1.3rem 3.5rem;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-warm));
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.15rem;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 8px 30px rgba(243,156,18,0.35);
-            transition: all 0.3s ease;
-            font-family: var(--font-body);
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(243,156,18,0.45);
-        }
-        
-        /* Note RGPD */
-        .form-note {
-            margin-top: 1.5rem;
-            padding: 1.5rem;
-            background: #fff3e0;  /* Fond orange très clair */
-            border-radius: 12px;
-            font-size: 0.9rem;
-            color: var(--gray-dark);
-            line-height: 1.7;
-        }
-        
-        .form-note strong {
-            color: var(--accent-warm);
-        }
-        
-        /* Message de succès */
-        .success {
-            display: none;  /* Caché par défaut */
-            padding: 2rem;
-            background: linear-gradient(135deg, #e3fcef, #c1f2d5);
-            border-radius: 15px;
-            text-align: center;
-            margin-top: 2rem;
-            border: 2px solid var(--success-green);
-        }
-        
-        .success.show {
-            display: block;  /* Affiché après soumission */
-            animation: slideDown 0.5s ease;
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .success h3 {
-            color: var(--success-green);
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .success p {
-            color: var(--gray-dark);
-        }
-        
-        /* ========================================
-           FOOTER (PIED DE PAGE)
-        ========================================= */
+        /* Footer */
         footer {
             background: var(--primary-dark);
             color: white;
@@ -755,16 +471,15 @@
         }
         
         .footer-container {
-            max-width: var(--container-width);
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;  /* 4 colonnes */
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
         
         .footer-section h4 {
-            font-family: var(--font-display);
             font-size: 1.4rem;
             margin-bottom: 1.8rem;
             font-weight: 700;
@@ -773,16 +488,6 @@
         .footer-section p {
             color: rgba(255,255,255,0.8);
             line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-tagline {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            color: var(--accent-orange);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
         }
         
         .footer-section ul {
@@ -797,12 +502,10 @@
             color: rgba(255,255,255,0.8);
             text-decoration: none;
             transition: color 0.3s ease;
-            display: inline-block;
         }
         
         .footer-section a:hover {
-            color: var(--accent-orange);
-            transform: translateX(3px);
+            color: var(--accent-turquoise);
         }
         
         .footer-bottom {
@@ -810,98 +513,57 @@
             padding-top: 2.5rem;
             text-align: center;
             color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
         }
         
         /* ========================================
-           RESPONSIVE - ADAPTATION MOBILE/TABLETTE
+           RESPONSIVE
         ========================================= */
-        
-        /* Tablettes (1024px et moins) */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;  /* Une seule colonne */
-                gap: 3rem;
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
-            .hero-text h1 {
-                font-size: 3rem;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);  /* 2 colonnes au lieu de 4 */
-            }
-            
-            .hero-card {
-                max-width: 100%;  /* Utilise toute la largeur disponible */
+            .hero-content h1 {
+                font-size: 2.8rem;
             }
         }
         
-        /* Mobiles (768px et moins) */
         @media (max-width: 768px) {
-            /* Affiche le bouton hamburger */
             .menu-toggle {
                 display: flex;
             }
             
-            /* Menu mobile (coulisse depuis la gauche) */
             .nav-menu {
                 position: fixed;
-                top: 90px;
-                left: -100%;  /* Caché hors écran à gauche */
+                top: 80px;
+                left: -100%;
                 width: 100%;
-                height: calc(100vh - 90px);
+                height: calc(100vh - 80px);
                 background: white;
                 flex-direction: column;
                 padding: 2rem;
                 gap: 1.5rem;
                 transition: left 0.3s ease;
-                box-shadow: 0 5px 30px rgba(0,0,0,0.1);
             }
             
-            /* Menu ouvert */
             .nav-menu.active {
                 left: 0;
             }
             
-            .hero-text h1 {
-                font-size: 2.3rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
             
-            .stats {
-                grid-template-columns: 1fr;  /* Stats en colonne */
-            }
-            
-            .cards {
-                grid-template-columns: 1fr;  /* Cartes en colonne */
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;  /* Champs de formulaire en colonne */
-            }
-            
-            .form-container {
-                padding: 2.5rem 2rem;
-            }
-            
-            .form-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .step {
-                flex-direction: column;
-                text-align: center;
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
             .footer-container {
                 grid-template-columns: 1fr;
             }
             
-            h2 {
-                font-size: 2.5rem;
-            }
-            
-            .section {
+            section {
                 padding: 70px 2rem;
             }
         }
@@ -911,22 +573,18 @@
     <!-- ========================================
          NAVIGATION
     ========================================= -->
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
         <div class="nav-container">
-            <!-- Logo cliquable -->
-            <a href="#accueil" class="logo">Alliance Financement</a>
+            <a href="#accueil" class="logo" aria-label="Alliance Financement - Retour à l'accueil">Alliance Financement</a>
             
-            <!-- Bouton hamburger (mobile) -->
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menu mobile">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             
-            <!-- Menu de navigation -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#methode">Notre Méthode</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#apropos">À Propos</a></li>
                 <li><a href="#contact" class="nav-cta">Démarrer mon projet</a></li>
@@ -935,150 +593,61 @@
     </nav>
 
     <!-- ========================================
-         SECTION HERO (ENTÊTE AVEC ANIMATION)
+         HERO - COPIE EXACTE MON CHASSEUR IMMO
+         Avec vidéo Tour Eiffel en fond
     ========================================= -->
     <section id="accueil" class="hero">
-        <!-- Canvas HTML5 pour l'animation -->
-        <canvas id="animationCanvas"></canvas>
+        <!-- Vidéo en arrière-plan -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline aria-hidden="true">
+                <source src="Fond_video_Tour_Eiffel.mp4" type="video/mp4">
+            </video>
+        </div>
         
-        <!-- Overlay sombre pour lisibilité du texte -->
-        <div class="hero-overlay"></div>
+        <!-- Overlay sombre -->
+        <div class="video-overlay" aria-hidden="true"></div>
         
+        <!-- Contenu principal -->
         <div class="hero-content">
-            <!-- Partie gauche : Texte -->
-            <div class="hero-text">
-                <h1>Un seul interlocuteur pour votre projet immobilier et votre financement</h1>
-                <p class="hero-tagline">À vos côtés, du premier doute à la signature</p>
-                <p class="hero-description">
-                    Un projet immobilier commence souvent par des questions, parfois par des doutes.
-                    Chez Alliance Financement, nous avons fait le choix de vous simplifier la vie.
-                    Nous vous accompagnons de A à Z, avec un seul interlocuteur, pour votre projet immobilier et votre financement.
-                </p>
+            <h1>Un seul interlocuteur pour votre projet immobilier et votre financement</h1>
+            <p class="hero-subtitle">À vos côtés, du premier doute à la signature</p>
+            
+            <!-- 3 CARTES BLANCHES -->
+            <div class="cards-container">
+                <!-- Carte 1 : Gain de temps -->
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">⚡</div>
+                    <h3>Gain de temps</h3>
+                    <p>Trouvez votre financement en moins de 3 rendez-vous</p>
+                </article>
                 
-                <!-- Statistiques -->
-                <div class="stats">
-                    <div class="stat">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">Réponse garantie</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Accompagnement</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">IDF</span>
-                        <span class="stat-label">Île-de-France</span>
-                    </div>
-                </div>
+                <!-- Carte 2 : Budget maîtrisé -->
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">🔍</div>
+                    <h3>Budget maîtrisé</h3>
+                    <p>Économisez en moyenne sur votre taux d'intérêt</p>
+                </article>
                 
-                <!-- Bouton CTA principal -->
-                <a href="#contact" class="cta-btn">
-                    Démarrer mon projet <span>→</span>
-                </a>
-                <p class="cta-subtext">✓ Gratuit et sans engagement • Réponse sous 24h</p>
+                <!-- Carte 3 : Expert dédié -->
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">👤</div>
+                    <h3>Expert dédié</h3>
+                    <p>Accompagnement total jusqu'à votre emménagement</p>
+                </article>
             </div>
             
-            <!-- Partie droite : Carte visuelle (CARRÉ) -->
-            <div class="hero-card">
-                <span class="badge">🏆 Expert local</span>
-                <div class="hero-icon">🏠</div>
-                <h3>Courtier en crédit immobilier & conseiller immobilier</h3>
-                <p>Noisy-le-Grand et villes alentours en Île-de-France</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SECTION ACCOMPAGNEMENT
-    ========================================= -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-section">🤝 Notre différence</span>
-                <h2>Un accompagnement simple, humain et rassurant</h2>
-                <p class="subtitle">
-                    Acheter ou investir dans l'immobilier peut vite devenir source de stress lorsque les démarches s'accumulent.
-                    Chez Alliance Financement, vous avez un seul interlocuteur qui vous accompagne à chaque étape.
-                </p>
-            </div>
+            <!-- BOUTON VERT TURQUOISE -->
+            <a href="#contact" class="cta-button">
+                <span>Je passe à l'action</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
             
-            <!-- Grille de 3 cartes -->
-            <div class="cards">
-                <div class="card">
-                    <div class="card-icon">👤</div>
-                    <h3>Un seul interlocuteur</h3>
-                    <p>Vous n'avez pas à coordonner plusieurs professionnels. Nous nous occupons de tout, de A à Z.</p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">📍</div>
-                    <h3>Visibilité totale</h3>
-                    <p>Vous savez toujours où vous en êtes dans votre projet, à chaque étape du processus.</p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Accompagnement continu</h3>
-                    <p>Nous restons à vos côtés du premier échange jusqu'à la signature chez le notaire.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SECTION MÉTHODE (FOND GRIS)
-    ========================================= -->
-    <section id="methode" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-section">🧭 Comment ça marche</span>
-                <h2>Une méthode claire et rassurante</h2>
-                <p class="subtitle">
-                    Nous savons que comprendre le déroulement d'un projet est essentiel pour avancer sereinement.
-                </p>
-            </div>
-            
-            <!-- 5 étapes numérotées -->
-            <div class="steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <div>
-                        <h3>Comprendre votre situation</h3>
-                        <p>Nous prenons le temps d'échanger, d'écouter et de répondre à vos premières questions.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <div>
-                        <h3>Sécuriser votre budget</h3>
-                        <p>Nous analysons votre capacité d'emprunt afin de définir un budget réaliste et sécurisé.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <div>
-                        <h3>Construire le projet immobilier</h3>
-                        <p>Nous vous accompagnons dans la structuration de votre projet et dans vos décisions importantes.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-num">4</div>
-                    <div>
-                        <h3>Monter et négocier le financement</h3>
-                        <p>Nous gérons l'intégralité du dossier et les échanges avec les banques pour obtenir les meilleures conditions.</p>
-                    </div>
-                </div>
-                
-                <div class="step">
-                    <div class="step-num">5</div>
-                    <div>
-                        <h3>Vous accompagner jusqu'à la signature</h3>
-                        <p>Nous restons présents et à vos côtés jusqu'à la signature finale chez le notaire.</p>
-                    </div>
-                </div>
+            <!-- Textes sous le bouton -->
+            <div class="hero-footer">
+                <p>✓ En 2 minutes seulement • Sans engagement</p>
+                <p>Réponse personnalisée sous 24h</p>
             </div>
         </div>
     </section>
@@ -1086,20 +655,19 @@
     <!-- ========================================
          SECTION SERVICES
     ========================================= -->
-    <section id="services" class="section">
+    <section id="services" class="section-alt">
         <div class="container">
-            <div class="section-header">
-                <span class="badge-section">💼 Nos services</span>
+            <header class="section-header">
                 <h2>Notre accompagnement de A à Z</h2>
                 <p class="subtitle">
                     Un seul interlocuteur, une vision globale, une vraie sérénité pour votre projet immobilier.
                 </p>
-            </div>
+            </header>
             
-            <div class="cards">
-                <!-- Service 1 : Projet immobilier -->
-                <div class="card">
-                    <div class="card-icon">🏡</div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🏡</div>
                     <h3>Le projet immobilier</h3>
                     <ul>
                         <li>Écoute et analyse de votre situation</li>
@@ -1107,11 +675,11 @@
                         <li>Structuration de votre projet immobilier</li>
                         <li>Accompagnement dans les décisions importantes</li>
                     </ul>
-                </div>
+                </article>
                 
-                <!-- Service 2 : Financement -->
-                <div class="card">
-                    <div class="card-icon">💰</div>
+                <!-- Service 2 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">💰</div>
                     <h3>Le financement</h3>
                     <ul>
                         <li>Étude de faisabilité complète</li>
@@ -1120,11 +688,11 @@
                         <li>Négociation des meilleures conditions</li>
                         <li>Suivi jusqu'à la signature</li>
                     </ul>
-                </div>
+                </article>
                 
-                <!-- Service 3 : Investissement locatif -->
-                <div class="card">
-                    <div class="card-icon">📊</div>
+                <!-- Service 3 -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">📊</div>
                     <h3>Investissement locatif</h3>
                     <ul>
                         <li>Analyse de votre profil investisseur</li>
@@ -1132,219 +700,83 @@
                         <li>Structuration du financement optimal</li>
                         <li>Vision long terme et stratégie patrimoniale</li>
                     </ul>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         SECTION À PROPOS (FOND GRIS)
+         SECTION À PROPOS
     ========================================= -->
-    <section id="apropos" class="section section-alt">
+    <section id="apropos">
         <div class="container">
-            <div class="section-header">
-                <span class="badge-section">👤 Qui sommes-nous</span>
+            <header class="section-header">
                 <h2>Alliance Financement, un accompagnement humain et de confiance</h2>
-                <p class="subtitle" style="max-width: 850px; font-size: 1.2rem; line-height: 2;">
+                <p class="subtitle" style="max-width: 850px; font-size: 1.2rem;">
                     Alliance Financement est née d'une volonté simple : <strong>remettre la clarté, l'écoute et la sérénité au cœur des projets immobiliers.</strong>
                     <br><br>
                     Chaque client est accompagné avec sérieux, disponibilité et engagement, qu'il s'agisse d'un premier achat ou d'un investissement.
                 </p>
-            </div>
-            
-            <div class="cards">
-                <!-- Carte Primo-accédants -->
-                <div class="card">
-                    <div class="card-icon">🔑</div>
-                    <h3>Primo-accédants</h3>
-                    <p>
-                        Vous achetez pour la première fois et vous avez besoin d'être guidé et rassuré.
-                        Nous prenons le temps de vous expliquer chaque étape, simplement et clairement.
-                    </p>
-                </div>
-                
-                <!-- Carte Investisseurs -->
-                <div class="card">
-                    <div class="card-icon">📈</div>
-                    <h3>Investisseurs</h3>
-                    <p>
-                        Vous souhaitez investir avec méthode et cohérence.
-                        Nous vous accompagnons sur le projet et son financement, avec une vision long terme.
-                    </p>
-                </div>
-            </div>
+            </header>
         </div>
     </section>
 
     <!-- ========================================
-         SECTION FORMULAIRE DE CONTACT
+         SECTION CONTACT
     ========================================= -->
-    <section id="contact" class="section form-section">
+    <section id="contact" class="section-alt">
         <div class="container">
-            <div class="form-container">
-                <!-- En-tête du formulaire -->
-                <div class="form-header">
-                    <h2>📞 Parlons de votre projet immobilier</h2>
-                    <p>
-                        Vous avez des questions ou des doutes ? Nous sommes là pour vous accompagner.
-                        Remplissez ce formulaire et nous vous recontactons sous 24h.
-                    </p>
-                </div>
-                
-                <!-- 3 badges de réassurance -->
-                <div class="form-features">
-                    <div class="form-feature">
-                        <span>📩</span>
-                        <h4>Étude gratuite</h4>
-                        <p>Sans engagement</p>
-                    </div>
-                    <div class="form-feature">
-                        <span>⏱️</span>
-                        <h4>Réponse rapide</h4>
-                        <p>Sous 24h</p>
-                    </div>
-                    <div class="form-feature">
-                        <span>🤝</span>
-                        <h4>Accompagnement</h4>
-                        <p>De A à Z</p>
-                    </div>
-                </div>
-                
-                <!-- Formulaire -->
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <!-- Ligne 1 : Nom et Prénom -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Nom <span class="required">*</span></label>
-                            <input type="text" name="nom" required placeholder="Votre nom">
-                        </div>
-                        <div class="form-group">
-                            <label>Prénom <span class="required">*</span></label>
-                            <input type="text" name="prenom" required placeholder="Votre prénom">
-                        </div>
-                    </div>
-                    
-                    <!-- Ligne 2 : Email et Téléphone -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Email <span class="required">*</span></label>
-                            <input type="email" name="email" required placeholder="votre.email@exemple.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Téléphone <span class="required">*</span></label>
-                            <input type="tel" name="telephone" required placeholder="06 12 34 56 78">
-                        </div>
-                    </div>
-                    
-                    <!-- Ligne 3 : Type de contrat et Revenus -->
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Type de contrat <span class="required">*</span></label>
-                            <select name="typeContrat" required>
-                                <option value="">Sélectionnez votre situation</option>
-                                <option value="CDI">CDI (Contrat à Durée Indéterminée)</option>
-                                <option value="CDD">CDD (Contrat à Durée Déterminée)</option>
-                                <option value="Fonctionnaire">Fonctionnaire</option>
-                                <option value="Indépendant">Indépendant / Auto-entrepreneur</option>
-                                <option value="Profession libérale">Profession libérale</option>
-                                <option value="Autre">Autre situation</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Tranche de revenus annuels <span class="required">*</span></label>
-                            <select name="trancheSalaire" required>
-                                <option value="">Sélectionnez votre tranche</option>
-                                <option value="Moins de 20k">Moins de 20 000 €</option>
-                                <option value="20-25k">20 000 € - 25 000 €</option>
-                                <option value="25-30k">25 000 € - 30 000 €</option>
-                                <option value="30-35k">30 000 € - 35 000 €</option>
-                                <option value="35-40k">35 000 € - 40 000 €</option>
-                                <option value="40-50k">40 000 € - 50 000 €</option>
-                                <option value="50-60k">50 000 € - 60 000 €</option>
-                                <option value="60-75k">60 000 € - 75 000 €</option>
-                                <option value="75-100k">75 000 € - 100 000 €</option>
-                                <option value="Plus de 100k">Plus de 100 000 €</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- Type de projet (optionnel) -->
-                    <div class="form-group">
-                        <label>Type de projet</label>
-                        <select name="typeProjet">
-                            <option value="">Sélectionnez votre projet (optionnel)</option>
-                            <option value="Résidence principale">Résidence principale</option>
-                            <option value="Investissement locatif">Investissement locatif</option>
-                            <option value="Résidence secondaire">Résidence secondaire</option>
-                            <option value="Renégociation">Renégociation de crédit</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Message (optionnel) -->
-                    <div class="form-group">
-                        <label>Votre message</label>
-                        <textarea name="message" placeholder="Décrivez-nous votre projet et vos besoins..."></textarea>
-                    </div>
-                    
-                    <!-- Bouton de soumission -->
-                    <button type="submit" class="submit-btn">Envoyer ma demande →</button>
-                    
-                    <!-- Note RGPD -->
-                    <div class="form-note">
-                        <strong>🔒 Protection de vos données</strong><br>
-                        Vos informations sont strictement confidentielles et utilisées uniquement pour vous proposer un accompagnement personnalisé.
-                        ✓ Aucune transmission à des tiers • ✓ Données sécurisées • ✓ Respect RGPD
-                    </div>
-                </form>
-                
-                <!-- Message de succès (caché par défaut) -->
-                <div class="success" id="successMessage">
-                    <h3>✅ Merci pour votre demande !</h3>
-                    <p>Nous avons bien reçu votre message et nous vous recontacterons sous 24h.</p>
-                    <p><strong>À vos côtés, du premier doute à la signature</strong></p>
-                </div>
+            <header class="section-header">
+                <h2>📞 Parlons de votre projet immobilier</h2>
+                <p class="subtitle">
+                    Vous avez des questions ou des doutes ? Nous sommes là pour vous accompagner.
+                    Contactez-nous et nous vous recontactons sous 24h.
+                </p>
+            </header>
+            
+            <div style="text-align: center;">
+                <a href="#contact" class="cta-button">
+                    <span>Démarrer mon projet</span>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         FOOTER (PIED DE PAGE)
+         FOOTER
     ========================================= -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-container">
-            <!-- Colonne 1 : Présentation -->
             <div class="footer-section">
                 <h4>Alliance Financement</h4>
-                <p class="footer-tagline">À vos côtés, du premier doute à la signature</p>
                 <p>
                     Courtier en crédit immobilier et conseiller immobilier à Noisy-le-Grand et en Île-de-France.
                     Un accompagnement complet pour votre projet immobilier.
                 </p>
             </div>
             
-            <!-- Colonne 2 : Services -->
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul>
                     <li><a href="#services">Courtage en crédit</a></li>
                     <li><a href="#services">Investissement locatif</a></li>
                     <li><a href="#services">Accompagnement A à Z</a></li>
-                    <li><a href="#methode">Notre méthode</a></li>
                 </ul>
             </div>
             
-            <!-- Colonne 3 : Navigation -->
             <div class="footer-section">
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#methode">Notre méthode</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#apropos">À propos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             
-            <!-- Colonne 4 : Zone d'intervention -->
             <div class="footer-section">
                 <h4>Zone d'intervention</h4>
                 <ul>
@@ -1357,7 +789,6 @@
             </div>
         </div>
         
-        <!-- Copyright -->
         <div class="footer-bottom">
             <p>&copy; 2025 Alliance Financement. Tous droits réservés.</p>
             <p style="margin-top: 0.5rem;">Courtier en crédit immobilier et conseiller immobilier - Noisy-le-Grand, Île-de-France</p>
@@ -1365,211 +796,22 @@
     </footer>
 
     <!-- ========================================
-         JAVASCRIPT - ANIMATIONS ET INTERACTIONS
+         JAVASCRIPT
     ========================================= -->
     <script>
-        /* ========================================
-           ANIMATION CANVAS
-           Crée une animation de fond avec particules
-           et dégradé animé (type vidéo)
-        ========================================= */
-        
-        // Récupération du canvas et du contexte 2D
-        const canvas = document.getElementById('animationCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        // Variables pour les dimensions
-        let width, height;
-        
-        // Tableau pour stocker les particules
-        let particles = [];
-        
-        // Nombre de particules à afficher
-        const particleCount = 100;
-        
-        // Couleurs pour le dégradé animé (inspiré de Mon Chasseur Immo)
-        const colors = [
-            { r: 102, g: 126, b: 234 },  // Bleu violet
-            { r: 118, g: 75, b: 162 },   // Violet
-            { r: 240, g: 147, b: 251 },  // Rose
-            { r: 79, g: 172, b: 254 },   // Bleu clair
-            { r: 0, g: 242, b: 254 }     // Cyan
-        ];
-        
-        // Variable pour l'animation du dégradé
-        let gradientOffset = 0;
-        
-        // Classe Particle pour chaque particule
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            
-            // Initialise ou réinitialise la particule
-            reset() {
-                this.x = Math.random() * width;          // Position X aléatoire
-                this.y = height + Math.random() * 100;   // Démarre en bas de l'écran
-                this.size = Math.random() * 3 + 1;       // Taille entre 1 et 4px
-                this.speedY = Math.random() * 0.5 + 0.3; // Vitesse verticale
-                this.speedX = (Math.random() - 0.5) * 0.5; // Vitesse horizontale (dérive)
-                this.opacity = Math.random() * 0.5 + 0.3; // Opacité entre 0.3 et 0.8
-            }
-            
-            // Met à jour la position de la particule
-            update() {
-                this.y -= this.speedY;  // Monte vers le haut
-                this.x += this.speedX;  // Dérive latérale
-                
-                // Si la particule sort de l'écran, la réinitialiser
-                if (this.y < -10) {
-                    this.reset();
-                }
-            }
-            
-            // Dessine la particule sur le canvas
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-                ctx.fill();
-                ctx.closePath();
-            }
-        }
-        
-        // Fonction pour redimensionner le canvas
-        function resizeCanvas() {
-            width = canvas.width = canvas.offsetWidth;
-            height = canvas.height = canvas.offsetHeight;
-        }
-        
-        // Fonction pour créer le dégradé animé
-        function drawGradient() {
-            // Calcul des couleurs du dégradé basé sur l'offset
-            const color1Index = Math.floor(gradientOffset) % colors.length;
-            const color2Index = (color1Index + 1) % colors.length;
-            const color3Index = (color1Index + 2) % colors.length;
-            
-            // Interpolation entre les couleurs
-            const blend = gradientOffset % 1;
-            
-            const color1 = interpolateColor(colors[color1Index], colors[color2Index], blend);
-            const color2 = interpolateColor(colors[color2Index], colors[color3Index], blend);
-            
-            // Création du dégradé
-            const gradient = ctx.createLinearGradient(0, 0, width, height);
-            gradient.addColorStop(0, `rgb(${color1.r}, ${color1.g}, ${color1.b})`);
-            gradient.addColorStop(0.5, `rgb(${color2.r}, ${color2.g}, ${color2.b})`);
-            gradient.addColorStop(1, `rgb(${color1.r}, ${color1.g}, ${color1.b})`);
-            
-            // Remplissage du canvas avec le dégradé
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, width, height);
-            
-            // Avance l'offset pour l'animation
-            gradientOffset += 0.005;
-        }
-        
-        // Fonction d'interpolation entre deux couleurs
-        function interpolateColor(color1, color2, factor) {
-            return {
-                r: Math.round(color1.r + (color2.r - color1.r) * factor),
-                g: Math.round(color1.g + (color2.g - color1.g) * factor),
-                b: Math.round(color1.b + (color2.b - color1.b) * factor)
-            };
-        }
-        
-        // Fonction d'initialisation
-        function init() {
-            resizeCanvas();
-            
-            // Création des particules
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-            
-            // Démarre l'animation
-            animate();
-        }
-        
-        // Boucle d'animation principale
-        function animate() {
-            // Dessine le dégradé de fond
-            drawGradient();
-            
-            // Met à jour et dessine chaque particule
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            
-            // Continue l'animation
-            requestAnimationFrame(animate);
-        }
-        
-        // Redimensionne le canvas quand la fenêtre change de taille
-        window.addEventListener('resize', resizeCanvas);
-        
-        // Initialise l'animation au chargement de la page
-        window.addEventListener('DOMContentLoaded', init);
-        
-        
-        /* ========================================
-           MENU MOBILE
-           Gestion du menu hamburger
-        ========================================= */
-        
+        // Menu mobile
         function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
         }
         
-        // Ferme le menu quand on clique sur un lien
+        // Fermer le menu au clic sur un lien
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navMenu').classList.remove('active');
             });
         });
         
-        
-        /* ========================================
-           GESTION DU FORMULAIRE
-           Soumission et affichage du message de succès
-        ========================================= */
-        
-        function handleSubmit(event) {
-            // Empêche le rechargement de la page
-            event.preventDefault();
-            
-            // Récupère les données du formulaire
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Log des données (à remplacer par un vrai envoi)
-            console.log('Données du formulaire:', data);
-            
-            // Cache le formulaire et affiche le message de succès
-            const form = document.getElementById('contactForm');
-            const successMessage = document.getElementById('successMessage');
-            
-            form.style.display = 'none';
-            successMessage.classList.add('show');
-            
-            // Réinitialise après 8 secondes
-            setTimeout(() => {
-                form.reset();
-                form.style.display = 'grid';
-                successMessage.classList.remove('show');
-            }, 8000);
-            
-            return false;
-        }
-        
-        
-        /* ========================================
-           EFFET DE SCROLL SUR LA NAVIGATION
-           Change l'ombre au scroll
-        ========================================= */
-        
+        // Effet scroll navigation
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.pageYOffset > 100) {
